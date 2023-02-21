@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginSignPage> {
                         text: "Login",
                       ),
                       Tab(
-                        text: "Sign-Up",
+                        text: "Sign-up",
                       )
                     ],
                   ),
