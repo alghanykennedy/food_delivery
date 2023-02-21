@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/color_schema.dart';
-import 'package:food_delivery/login.dart';
+import 'package:food_delivery/utilities/color_schema.dart';
+import 'package:food_delivery/screens/loginsignup_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -13,41 +13,57 @@ class SplashScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           const SizedBox(
-            height: 60,
+            height: 30,
           ),
           Container(
             alignment: Alignment.topLeft,
+            padding: EdgeInsets.only(left: 40),
             child: CircleAvatar(
-              backgroundImage: AssetImage('assets/image/logormv.png'),
+              // backgroundImage: AssetImage('assets/image/logormv.png'),
+              // backgroundColor: Colors.white,
+              // radius: 40,
               backgroundColor: Colors.white,
               radius: 40,
-              // backgroundColor: Colors.white,
-              // radius: 35,
-              // child: CircleAvatar(
-              //   backgroundImage: AssetImage('assets/image/logo1.png'),
-              //   radius: 25,
-              // ),
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/image/logo1.png'),
+                backgroundColor: Colors.white,
+                radius: 20,
+              ),
             ),
           ),
           const SizedBox(
-            height: 40,
+            height: 5,
           ),
-          const Text(
-            'Food For Everyone',
-            style: TextStyle(
-              fontSize: 80,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
+          Padding(
+            padding: EdgeInsets.only(left: 40),
+            child: const Text(
+              'Food For Everyone',
+              style: TextStyle(
+                fontSize: 60,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.start,
             ),
-            textAlign: TextAlign.start,
           ),
-          Container(
-            height: 350,
-            width: MediaQuery.of(context).size.width,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/image/face2.png'),
-                    fit: BoxFit.fitHeight)),
+          const SizedBox(
+            height: 30,
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: Stack(children: [
+                Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: Image.asset(
+                      'assets/image/face1.png',
+                      scale: 1,
+                    )),
+                Image.asset('assets/image/face2.png', scale: 1.1),
+              ]),
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -56,7 +72,7 @@ class SplashScreen extends StatelessWidget {
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
-                      return LoginPage();
+                      return LoginSignPage();
                     },
                   ),
                 ),
