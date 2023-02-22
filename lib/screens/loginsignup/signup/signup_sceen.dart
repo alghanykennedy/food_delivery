@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utilities/color_schema.dart';
+import '../../../utilities/color_schema.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});

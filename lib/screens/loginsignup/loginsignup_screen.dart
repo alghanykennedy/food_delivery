@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/utilities/color_schema.dart';
-import 'package:food_delivery/screens/login_screen.dart';
-import 'package:food_delivery/screens/signup_sceen.dart';
+import 'package:food_delivery/screens/loginsignup/login/login_screen.dart';
+import 'package:food_delivery/screens/loginsignup/signup/signup_sceen.dart';
 
 class LoginSignPage extends StatefulWidget {
   const LoginSignPage({super.key});

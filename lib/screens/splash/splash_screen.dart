@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/utilities/color_schema.dart';
-import 'package:food_delivery/screens/loginsignup_screen.dart';
+import 'package:food_delivery/screens/loginsignup/loginsignup_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
