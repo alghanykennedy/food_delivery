@@ -20,7 +20,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       resizeToAvoidBottomInset: false,
       backgroundColor: background,
       appBar: AppBar(
-        toolbarHeight: 120,
+        toolbarHeight: 80,
         backgroundColor: background,
         elevation: 0.0,
         centerTitle: true,
@@ -43,24 +43,42 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Row(
-                //   children: [
-                //     IconButton(
-                //         padding: const EdgeInsets.only(left: 30, top: 20),
-                //         onPressed: () {},
-                //         icon: const Icon(Icons.arrow_back_ios)),
-                //     const SizedBox(
-                //       width: 100,
-                //     ),
-                //   ],
-                // ),
-                const SizedBox(height: 50),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 40),
+                      child: Text(
+                        'Delivery',
+                        style: TextStyle(
+                            fontSize: 38, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 40),
                 Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 45),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [Text('data'), Text('data2')],
-                    )),
+                  padding: EdgeInsets.symmetric(horizontal: 45),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Address details',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      TextButton(
+                        child: Text(
+                          "change",
+                          style: TextStyle(fontSize: 16, color: deepOrange800),
+                        ),
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          foregroundColor: Colors.transparent,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -69,67 +87,75 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   child: Column(
                     children: [
                       Container(
-                        height: 130,
+                        height: 110,
                         width: 300,
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20)),
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 20, top: 20),
-                          child: Row(
-                            children: [
-                              // Container(
-                              //   alignment: Alignment.topLeft,
-                              //   child: Image.asset('assets/img/img_profile.png',
-                              //       height: 60, width: 60),
-                              // ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                      padding: const EdgeInsets.only(left: 5),
-                                      height: 20,
-                                      child: const Text(
-                                        "Marvis Ighedosa",
-                                        style: TextStyle(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w600),
-                                        textAlign: TextAlign.center,
-                                        overflow: TextOverflow.visible,
-                                      ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            // Container(
+                            //   alignment: Alignment.topLeft,
+                            //   child: Image.asset('assets/img/img_profile.png',
+                            //       height: 60, width: 60),
+                            // ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    height: 15,
+                                  ),
+                                  Container(
+                                    padding: const EdgeInsets.only(left: 5),
+                                    height: 14,
+                                    child: const Text(
+                                      "Marvis Ighedosa",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w600),
+                                      textAlign: TextAlign.center,
+                                      overflow: TextOverflow.visible,
                                     ),
-                                    Container(
-                                      width: 165,
-                                      padding: const EdgeInsets.only(
-                                          left: 5, top: 8),
-                                      child: const Text(
-                                        "Dosamarvis@gmail.com",
-                                        style: TextStyle(
-                                            color: Colors.black26,
-                                            fontSize: 13),
-                                        textAlign: TextAlign.start,
-                                      ),
+                                  ),
+                                  Divider(
+                                      color: Colors.grey[500],
+                                      indent: 5,
+                                      endIndent: 25),
+                                  Container(
+                                    padding: const EdgeInsets.only(left: 5),
+                                    height: 14,
+                                    child: const Text(
+                                      "Km 5 refinery road oppsite",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w600),
+                                      textAlign: TextAlign.center,
+                                      overflow: TextOverflow.visible,
                                     ),
-                                    Container(
-                                      padding: const EdgeInsets.all(5),
-                                      height: 54,
-                                      width: 180,
-                                      child: const Text(
-                                        "No 15 uti street off ovie palace road effurun delta state",
-                                        overflow: TextOverflow.visible,
-                                        textAlign: TextAlign.start,
-                                        style: TextStyle(
-                                            color: Colors.black26,
-                                            fontSize: 13),
-                                      ),
+                                  ),
+                                  Divider(
+                                      color: Colors.grey[500],
+                                      indent: 5,
+                                      endIndent: 25),
+                                  Container(
+                                    padding: const EdgeInsets.only(left: 5),
+                                    height: 14,
+                                    child: const Text(
+                                      "08572163546271",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w600),
+                                      textAlign: TextAlign.center,
+                                      overflow: TextOverflow.visible,
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -139,14 +165,18 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(
-                      height: 50,
+                      height: 35,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 40),
-                      child: const Text('data'),
+                      child: const Text(
+                        'Delivery method',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -184,7 +214,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                               ),
                             ),
                             Divider(
-                                color: Colors.black26,
+                                color: Colors.grey[500],
                                 indent: 80,
                                 endIndent: 30),
                             ListTile(
@@ -217,7 +247,53 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       ),
                     ),
                     const SizedBox(
-                      height: 100,
+                      height: 65,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 45),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Total',
+                            style: TextStyle(
+                              fontSize: 20,
+                            ),
+                          ),
+                          Text(
+                            '23,000',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 70,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: InkWell(
+                        onTap: () {},
+                        child: Container(
+                          alignment: Alignment.center,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 100,
+                            vertical: 25,
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50.0),
+                            color: deepRed700,
+                          ),
+                          child: Text(
+                            "Login",
+                            style: TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white),
+                          ),
+                        ),
+                      ),
                     ),
                     // Padding(
                     //   padding: const EdgeInsets.symmetric(horizontal: 40),

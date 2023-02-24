@@ -56,7 +56,7 @@ class FoodCard extends StatelessWidget {
                 ],
               ),
               child: CircleAvatar(
-                backgroundImage: AssetImage('assets/image/food1.png'),
+                backgroundImage: AssetImage('${image}'),
               ),
             ),
           ),

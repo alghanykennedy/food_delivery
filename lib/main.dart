@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'Food Delivery',
       // theme: ThemeData(
       // ),
-      home: HomeScreen(),
+      home: CheckoutScreen(),
     );
   }
 }
