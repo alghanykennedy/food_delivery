@@ -39,6 +39,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: ListView(
+          physics: NeverScrollableScrollPhysics(),
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -204,8 +205,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                               leading: Radio<RadioButtonProfile>(
                                 value: RadioButtonProfile.cardProfile,
                                 groupValue: _character,
-                                fillColor: MaterialStateColor.resolveWith(
-                                    (states) => Color(0xFFFA4A0C)),
+                                activeColor: MaterialStateColor.resolveWith(
+                                    (states) => deepOrange800),
                                 onChanged: (RadioButtonProfile? value) {
                                   setState(() {
                                     _character = value;
@@ -233,8 +234,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                               leading: Radio<RadioButtonProfile>(
                                 value: RadioButtonProfile.paypalProfile,
                                 groupValue: _character,
-                                fillColor: MaterialStateColor.resolveWith(
-                                    (states) => Color(0xFFFA4A0C)),
+                                activeColor: MaterialStateColor.resolveWith(
+                                    (states) => deepOrange800),
                                 onChanged: (RadioButtonProfile? value) {
                                   setState(() {
                                     _character = value;
@@ -269,29 +270,34 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: 70,
+                      height: 20,
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      padding: const EdgeInsets.symmetric(vertical: 40),
                       child: InkWell(
                         onTap: () {},
-                        child: Container(
-                          alignment: Alignment.center,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 100,
-                            vertical: 25,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50.0),
-                            color: deepRed700,
-                          ),
-                          child: Text(
-                            "Login",
-                            style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white),
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              alignment: Alignment.center,
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 70,
+                                vertical: 25,
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50.0),
+                                color: deepOrange800,
+                              ),
+                              child: Text(
+                                "Proceed to payment",
+                                style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),

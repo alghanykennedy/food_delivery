@@ -55,7 +55,7 @@ class Cart_Screen extends StatelessWidget {
                       onPressed: ((context) {}),
                       child: CircleAvatar(
                         radius: 26,
-                        backgroundColor: Colors.red,
+                        backgroundColor: deepOrange800,
                         child: IconButton(
                           onPressed: () {},
                           icon: Icon(Icons.favorite),
@@ -67,7 +67,7 @@ class Cart_Screen extends StatelessWidget {
                       onPressed: ((context) {}),
                       child: CircleAvatar(
                         radius: 26,
-                        backgroundColor: Colors.red,
+                        backgroundColor: deepOrange800,
                       )),
                 ],
               ),
