@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/cart/cart_screen.dart';
+import 'package:food_delivery/screens/checkout/chekcout_screen.dart';
+import 'package:food_delivery/screens/home/home_screen.dart';
 import 'package:food_delivery/screens/history/history_empty.dart';
 import 'package:food_delivery/screens/history/history_screen.dart';
 import 'package:food_delivery/screens/items/items_screen.dart';
@@ -19,9 +22,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Food Delivery',
       // theme: ThemeData(
-      //   primarySwatch: Colors.red,
       // ),
-      home: const ItemsScreen(),
+      home: CheckoutScreen(),
     );
   }
 }
