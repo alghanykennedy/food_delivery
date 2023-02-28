@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/drawer/bottom_nav.dart';
+import 'package:food_delivery/screens/home/home_screen.dart';
 
 import '../../../utilities/color_schema.dart';
 
@@ -16,7 +18,7 @@ class _SignupScreenState extends State<SignUpScreen> {
       color: Colors.grey[300],
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 320,
           ),
           Container(
@@ -63,11 +65,19 @@ class _SignupScreenState extends State<SignUpScreen> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 100,
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return BottomNavPage();
+                  },
+                ),
+              );
+            },
             child: Container(
               padding: const EdgeInsets.symmetric(
                 horizontal: 100,
@@ -75,7 +85,7 @@ class _SignupScreenState extends State<SignUpScreen> {
               ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50.0),
-                color: deepRed700,
+                color: deepOrange800,
               ),
               child: Text(
                 "Sign-up",

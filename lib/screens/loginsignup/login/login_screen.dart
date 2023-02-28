@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/drawer/bottom_nav.dart';
+import 'package:food_delivery/screens/home/home_screen.dart';
 
 import '../../../utilities/color_schema.dart';
 
@@ -16,7 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
       color: Colors.grey[300],
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 320,
           ),
           Container(
@@ -50,20 +52,28 @@ class _LoginScreenState extends State<LoginScreen> {
               child: TextButton(
                 child: Text(
                   "Forgot Password?",
-                  style: TextStyle(fontSize: 16, color: deepRed700),
+                  style: TextStyle(fontSize: 16, color: deepOrange800),
                 ),
                 onPressed: () {},
                 style: TextButton.styleFrom(
-                  foregroundColor: Colors.red,
+                  foregroundColor: deepOrange800,
                 ),
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 180,
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return BottomNavPage();
+                  },
+                ),
+              );
+            },
             child: Container(
               padding: const EdgeInsets.symmetric(
                 horizontal: 100,
@@ -71,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50.0),
-                color: deepRed700,
+                color: deepOrange800,
               ),
               child: Text(
                 "Login",

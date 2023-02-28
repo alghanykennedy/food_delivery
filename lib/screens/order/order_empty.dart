@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/drawer/bottom_nav.dart';
+import 'package:food_delivery/screens/home/home_screen.dart';
 import 'package:food_delivery/utilities/color_schema.dart';
 
 class OrderEmpty extends StatelessWidget {
@@ -15,9 +17,9 @@ class OrderEmpty extends StatelessWidget {
           Container(
             width: double.infinity,
             height: 90,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/image/icons/Group.png'))),
+            // decoration: BoxDecoration(
+            //     image: DecorationImage(
+            //         image: AssetImage('assets/image/icons/Group.png'))),
           ),
           Container(
             alignment: Alignment.center,
@@ -51,7 +53,10 @@ class OrderEmpty extends StatelessWidget {
             height: 180,
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => BottomNavPage()));
+            },
             child: Container(
               padding: const EdgeInsets.symmetric(
                 horizontal: 100,
@@ -59,7 +64,7 @@ class OrderEmpty extends StatelessWidget {
               ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50.0),
-                color: deepRed700,
+                color: deepOrange800,
               ),
               child: Text(
                 "Start ordering",

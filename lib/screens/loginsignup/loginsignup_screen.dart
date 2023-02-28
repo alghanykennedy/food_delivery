@@ -42,7 +42,8 @@ class _LoginPageState extends State<LoginSignPage> {
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     labelColor: Colors.black,
                     indicator: UnderlineTabIndicator(
-                        borderSide: BorderSide(width: 3.5, color: deepRed700),
+                        borderSide:
+                            BorderSide(width: 3.5, color: deepOrange800),
                         insets: EdgeInsets.symmetric(horizontal: 50.0)),
                     tabs: [
                       Tab(

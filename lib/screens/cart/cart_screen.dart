@@ -4,19 +4,21 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:food_delivery/main.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:food_delivery/utilities/color_schema.dart';
+import 'package:food_delivery/widget/button_widget.dart';
 
 class Cart_Screen extends StatelessWidget {
   List<MyModel> models = [
     MyModel(name: 'product1', image: 'assets/image/food1.png', price: 215.80),
     MyModel(name: 'product2', image: 'assets/image/food1.png', price: 415.30),
     MyModel(name: 'product3', image: 'assets/image/food1.png', price: 115.50),
-    MyModel(name: 'product4', image: 'assets/image/food1.png', price: 115.50),
-    MyModel(name: 'product5', image: 'assets/image/food1.png', price: 115.50),
-    MyModel(name: 'product6', image: 'assets/image/food1.png', price: 115.50),
-    MyModel(name: 'product7', image: 'assets/image/food1.png', price: 115.50),
-    MyModel(name: 'product8', image: 'assets/image/food1.png', price: 115.50),
-    MyModel(name: 'product9', image: 'assets/image/food1.png', price: 115.50),
-    MyModel(name: 'product10', image: 'assets/image/food1.png', price: 115.50),
+    MyModel(name: 'product3', image: 'assets/image/food1.png', price: 115.50),
+    MyModel(name: 'product3', image: 'assets/image/food1.png', price: 115.50),
+    MyModel(name: 'product3', image: 'assets/image/food1.png', price: 115.50),
+    MyModel(name: 'product3', image: 'assets/image/food1.png', price: 115.50),
+    MyModel(name: 'product3', image: 'assets/image/food1.png', price: 115.50),
+    MyModel(name: 'product3', image: 'assets/image/food1.png', price: 115.50),
+    MyModel(name: 'product3', image: 'assets/image/food1.png', price: 115.50),
+    MyModel(name: 'product3', image: 'assets/image/food1.png', price: 115.50),
   ];
 
   @override
@@ -39,41 +41,55 @@ class Cart_Screen extends StatelessWidget {
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: ListView.builder(
-          itemCount: models.length,
-          itemBuilder: ((context, index) {
-            final model = models[index];
-            return Slidable(
-              // Specify a key if the Slidable is dismissible.
-              key: ValueKey(0),
-              // The end action pane is the one at the right or the bottom side.
-              endActionPane: ActionPane(
-                motion: ScrollMotion(),
-                children: [
-                  CustomSlidableAction(
-                      padding: EdgeInsets.only(left: 15),
-                      onPressed: ((context) {}),
-                      child: CircleAvatar(
-                        radius: 26,
-                        backgroundColor: deepOrange800,
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.favorite),
-                          color: Colors.white,
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+                itemCount: models.length,
+                itemBuilder: ((context, index) {
+                  final model = models[index];
+                  return Column(
+                    children: [
+                      Slidable(
+                        // Specify a key if the Slidable is dismissible.
+                        key: ValueKey(0),
+                        // The end action pane is the one at the right or the bottom side.
+                        endActionPane: ActionPane(
+                          motion: ScrollMotion(),
+                          children: [
+                            CustomSlidableAction(
+                                padding: EdgeInsets.only(left: 15),
+                                onPressed: ((context) {}),
+                                child: CircleAvatar(
+                                  radius: 26,
+                                  backgroundColor: deepOrange800,
+                                  child: IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(Icons.favorite),
+                                    color: Colors.white,
+                                  ),
+                                )),
+                            CustomSlidableAction(
+                                padding: EdgeInsets.only(right: 30),
+                                onPressed: ((context) {}),
+                                child: CircleAvatar(
+                                  radius: 26,
+                                  backgroundColor: deepOrange800,
+                                )),
+                          ],
                         ),
-                      )),
-                  CustomSlidableAction(
-                      padding: EdgeInsets.only(right: 30),
-                      onPressed: ((context) {}),
-                      child: CircleAvatar(
-                        radius: 26,
-                        backgroundColor: deepOrange800,
-                      )),
-                ],
-              ),
-              child: buildListTile(model),
-            );
-          })),
+                        child: buildListTile(model),
+                      ),
+                    ],
+                  );
+                })),
+          ),
+          ButtonWidget(textTitle: 'Complete order'),
+          SizedBox(
+            height: 16,
+          )
+        ],
+      ),
     );
   }
 
