@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:food_delivery/screens/food/food_screen.dart';
 import 'package:food_delivery/screens/loginsignup/loginsignup_screen.dart';
 import 'package:food_delivery/screens/order/order_screen.dart';
 import 'package:food_delivery/utilities/color_schema.dart';
@@ -88,19 +89,34 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 20.0,
                 ),
                 //To add some elevation & border radius to text field need to wrap in Material
-                Material(
-                  elevation: 0.0,
-                  borderRadius: BorderRadius.circular(30.0),
-                  child: TextField(
-                    textAlign: TextAlign.start,
-                    textAlignVertical: TextAlignVertical.center,
-                    decoration: InputDecoration(
-                        hintText: "Search",
-                        prefixIcon: Icon(
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return MenuFoodScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey[100],
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
                           Icons.search_sharp,
                           color: Colors.black,
                         ),
-                        border: InputBorder.none),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text('Search')
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(
