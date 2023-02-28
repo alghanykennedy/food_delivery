@@ -1,8 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/widget/food_card_widget.dart';
 
-class MenuFoodScreen extends StatelessWidget {
+class MenuFoodScreen extends StatefulWidget {
   const MenuFoodScreen({Key? key}) : super(key: key);
+
+  @override
+  State<MenuFoodScreen> createState() => _MenuFoodScreenState();
+}
+
+class _MenuFoodScreenState extends State<MenuFoodScreen> {
+  final foodList = [
+    {'name': 'Veggoe Tomatto Mix', 'icon': 'assets/image/food1.png'},
+    {'name': 'Egg and Cucumber..', 'icon': 'assets/image/food1.png'},
+    {'name': 'Fried Chicken m.', 'icon': 'assets/image/food1.png'},
+    {'name': 'Moi-moi and Ekpa', 'icon': 'assets/image/food1.png'},
+    {'name': 'Bakpau', 'icon': 'assets/image/food1.png'},
+    {'name': 'chuankie', 'icon': 'assets/image/food1.png'},
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +35,7 @@ class MenuFoodScreen extends StatelessWidget {
           child: TextFormField(
             decoration:
                 const InputDecoration(border: InputBorder.none, hintText: ""),
+            // focusNode: FocusNode().,
           ),
         ),
       ),
@@ -52,38 +67,43 @@ class MenuFoodScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 50,
                 children: [
-                  FoodCard(
-                    title: "Veggoe\nTomatto Mix",
-                    imageFood: 'assets/image/food1.png',
-                  ),
-                  FoodCard(
-                    title: "Egg and\nCucumber..",
-                    imageFood: 'assets/image/food1.png',
-                  ),
-                  FoodCard(
-                    title: "Fried\nChicken m.",
-                    imageFood: 'assets/image/food1.png',
-                  ),
-                  FoodCard(
-                    title: "Moi-moi\nand Ekpa",
-                    imageFood: 'assets/image/food1.png',
-                  ),
-                  FoodCard(
-                    title: "Bakpau",
-                    imageFood: 'assets/image/food1.png',
-                  ),
-                  FoodCard(
-                    title: "chuankie",
-                    imageFood: 'assets/image/food1.png',
-                  ),
-                  FoodCard(
-                    title: "Veggoe\nTomatto Mix",
-                    imageFood: 'assets/image/ic_food.png',
-                  ),
-                  FoodCard(
-                    title: "Egg and\nCucumber..",
-                    imageFood: 'assets/image/ic_food3.png',
-                  ),
+                  ...foodList.map((e) {
+                    return FoodCard(
+                        title: e['name'] as String,
+                        imageFood: e['icon'] as String);
+                  }),
+                  // FoodCard(
+                  //   title: "Veggoe Tomatto Mix",
+                  //   imageFood: 'assets/image/food1.png',
+                  // ),
+                  // FoodCard(
+                  //   title: "Egg and Cucumber..",
+                  //   imageFood: 'assets/image/food1.png',
+                  // ),
+                  // FoodCard(
+                  //   title: "Fried Chicken m.",
+                  //   imageFood: 'assets/image/food1.png',
+                  // ),
+                  // FoodCard(
+                  //   title: "Moi-moi and Ekpa",
+                  //   imageFood: 'assets/image/food1.png',
+                  // ),
+                  // FoodCard(
+                  //   title: "Bakpau",
+                  //   imageFood: 'assets/image/food1.png',
+                  // ),
+                  // FoodCard(
+                  //   title: "chuankie",
+                  //   imageFood: 'assets/image/food1.png',
+                  // ),
+                  // FoodCard(
+                  //   title: "Veggoe\nTomatto Mix",
+                  //   imageFood: 'assets/image/ic_food.png',
+                  // ),
+                  // FoodCard(
+                  //   title: "Egg and\nCucumber..",
+                  //   imageFood: 'assets/image/ic_food3.png',
+                  // ),
                 ],
               ),
             ),
