@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/home/home_screen.dart';
+import 'package:food_delivery/screens/profile/profile_change_screen.dart';
+import 'package:food_delivery/utilities/color_schema.dart';
 import 'package:food_delivery/widget/button_widget.dart';
 import 'package:food_delivery/widget/font_widget.dart';
 
@@ -32,7 +35,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 IconButton(
                     alignment: Alignment.topLeft,
                     padding: const EdgeInsets.only(left: 30, top: 20),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return HomeScreen();
+                          },
+                        ),
+                      );
+                    },
                     icon: const Icon(Icons.arrow_back_ios)),
                 const SizedBox(height: 30),
                 const Padding(
@@ -60,7 +71,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             width: 80,
                           ),
                           TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return ProfileChangeScreen();
+                                    },
+                                  ),
+                                );
+                              },
                               child: const Text(
                                 "change",
                                 style: TextStyle(
@@ -268,7 +287,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       const SizedBox(
                         height: 50,
                       ),
-                      const ButtonWidget(textTitle: "Update")
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return HomeScreen();
+                              },
+                            ),
+                          );
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 100,
+                            vertical: 25,
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50.0),
+                            color: deepOrange800,
+                          ),
+                          child: Text(
+                            "Update",
+                            style: TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white),
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 ),

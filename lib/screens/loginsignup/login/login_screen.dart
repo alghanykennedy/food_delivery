@@ -69,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
-                    return BottomNavPage();
+                    return HomeScreen();
                   },
                 ),
               );

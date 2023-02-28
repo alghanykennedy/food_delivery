@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/checkout/payment_screen.dart';
 import 'package:food_delivery/screens/drawer/bottom_nav.dart';
 import 'package:food_delivery/screens/home/home_screen.dart';
 import 'package:food_delivery/utilities/color_schema.dart';
@@ -54,8 +55,8 @@ class OrderEmpty extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => BottomNavPage()));
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => HomeScreen()));
             },
             child: Container(
               padding: const EdgeInsets.symmetric(

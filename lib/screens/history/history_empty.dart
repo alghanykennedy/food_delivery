@@ -15,9 +15,9 @@ class HistoryEmpty extends StatelessWidget {
           Container(
             width: double.infinity,
             height: 90,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/image/icons/Vector.png'))),
+            // decoration: BoxDecoration(
+            //     image: DecorationImage(
+            //         image: AssetImage('assets/image/icons/Vector.png'))),
           ),
           Container(
             alignment: Alignment.center,
@@ -59,7 +59,7 @@ class HistoryEmpty extends StatelessWidget {
               ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50.0),
-                color: deepRed700,
+                color: deepOrange800,
               ),
               child: Text(
                 "Start ordering",

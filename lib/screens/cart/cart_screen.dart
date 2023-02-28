@@ -3,6 +3,9 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:food_delivery/main.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:food_delivery/screens/checkout/chekcout_screen.dart';
+import 'package:food_delivery/screens/checkout/payment_screen.dart';
+import 'package:food_delivery/screens/drawer/bottom_nav.dart';
 import 'package:food_delivery/utilities/color_schema.dart';
 import 'package:food_delivery/widget/button_widget.dart';
 
@@ -31,10 +34,14 @@ class Cart_Screen extends StatelessWidget {
         backgroundColor: background,
         elevation: 0.0,
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
-          onPressed: (() {}),
-          color: Colors.black,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.of(context).pop();
+          },
+          child: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
         ),
         title: Text(
           'Cart',
@@ -84,7 +91,34 @@ class Cart_Screen extends StatelessWidget {
                   );
                 })),
           ),
-          ButtonWidget(textTitle: 'Complete order'),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return CheckoutScreen();
+                  },
+                ),
+              );
+            },
+            child: Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 100,
+                vertical: 25,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50.0),
+                color: deepOrange800,
+              ),
+              child: Text(
+                "Add to cart",
+                style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white),
+              ),
+            ),
+          ),
           SizedBox(
             height: 16,
           )

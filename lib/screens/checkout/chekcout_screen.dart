@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/checkout/payment_screen.dart';
+import 'package:food_delivery/screens/drawer/bottom_nav.dart';
 import 'package:food_delivery/utilities/color_schema.dart';
 
 enum RadioButtonProfile { cardProfile, bankAccountProfile, paypalProfile }
@@ -28,9 +30,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           'Checkout',
           style: TextStyle(color: Colors.black),
         ),
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.of(context).pop();
+          },
+          child: Icon(
             Icons.arrow_back_ios,
             color: Colors.black,
           ),
@@ -96,11 +100,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            // Container(
-                            //   alignment: Alignment.topLeft,
-                            //   child: Image.asset('assets/img/img_profile.png',
-                            //       height: 60, width: 60),
-                            // ),
                             Padding(
                               padding: const EdgeInsets.only(left: 10),
                               child: Column(
@@ -275,7 +274,15 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 40),
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return PaymentScreen();
+                              },
+                            ),
+                          );
+                        },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [

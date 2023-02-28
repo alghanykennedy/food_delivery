@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/drawer/bottom_nav.dart';
 import 'package:food_delivery/screens/order/order_empty.dart';
 
 class OrderScreen extends StatelessWidget {
@@ -16,6 +17,9 @@ class OrderScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
         leading: GestureDetector(
+          onTap: () {
+            Navigator.of(context).pop();
+          },
           child: Icon(
             Icons.arrow_back_ios,
             color: Colors.black,

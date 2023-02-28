@@ -34,7 +34,9 @@ class _BottomNavPageState extends State<BottomNavPage> {
   Widget build(BuildContext context) {
     List<Widget> widgets = [
       HomeScreen(),
-      ProfileScreen(),
+      Container(
+        child: Text('Page3'),
+      ),
       Container(
         child: Text('Page3'),
       ),

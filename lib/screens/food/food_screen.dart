@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/drawer/bottom_nav.dart';
 import 'package:food_delivery/widget/food_card_widget.dart';
 
 class MenuFoodScreen extends StatefulWidget {
@@ -24,6 +25,15 @@ class _MenuFoodScreenState extends State<MenuFoodScreen> {
       appBar: AppBar(
         elevation: 0,
         leading: GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return BottomNavPage();
+                },
+              ),
+            );
+          },
           child: Icon(
             Icons.arrow_back_ios,
             color: Colors.black,

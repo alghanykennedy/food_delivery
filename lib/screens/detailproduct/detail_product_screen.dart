@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/cart/cart_screen.dart';
+import 'package:food_delivery/screens/drawer/bottom_nav.dart';
+import 'package:food_delivery/screens/home/home_screen.dart';
+import 'package:food_delivery/utilities/color_schema.dart';
 import 'package:food_delivery/widget/button_widget.dart';
 
 class DetailProductScreen extends StatefulWidget {
@@ -37,7 +41,9 @@ class _DetailProductScreenState extends State<DetailProductScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(
-                        onPressed: null,
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
                         icon: Icon(
                           Icons.arrow_back_ios_new,
                           size: 20,
@@ -123,9 +129,36 @@ class _DetailProductScreenState extends State<DetailProductScreen> {
                         child: Text(
                             'All our foods are double checked before leaving our stores so by any case you found a broken food please contact our hotline immediately.'),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 20),
-                        child: ButtonWidget(textTitle: 'Add to cart'),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Cart_Screen();
+                              },
+                            ),
+                          );
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 100,
+                            vertical: 25,
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50.0),
+                            color: deepOrange800,
+                          ),
+                          child: Text(
+                            "Add to cart",
+                            style: TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white),
+                          ),
+                        ),
                       )
                     ],
                   ),
